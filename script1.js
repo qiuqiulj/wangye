@@ -16,3 +16,13 @@ function solveQuadratic() {
     document.getElementById("roots").innerHTML = "没有实根.";
   }
 }
+
+function toggleDetails() {
+  var details = document.getElementById("details");
+  // 切换子列表的最大高度，从0到自适应高度或从自适应高度到0
+  if (details.style.maxHeight) {
+    details.style.maxHeight = null;
+  } else {
+    details.style.maxHeight = details.scrollHeight + "px";
+  }
+}
