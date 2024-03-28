@@ -76,3 +76,26 @@ let img = document.querySelector('.img')
             img.style.left = imgl+"px"
             img.style.top = imgt+"px"
         },10)
+
+
+
+/*检测设备类型 */
+  function isAndroid() {
+    return /Android/i.test(navigator.userAgent);
+  }
+
+  // 设置背景视频
+  window.addEventListener('DOMContentLoaded', function() {
+    var videoSource = document.getElementById('video-source');
+    var backgroundVideo = document.getElementById('background-video');
+
+    // 如果是安卓设备，加载另一个视频
+    if (isAndroid()) {
+      videoSource.src = "video/alt2.mp4";
+    } else {
+      videoSource.src = "video/星汐seki_水墨_AI生成.mp4";
+    }
+
+    // 重新加载视频
+    backgroundVideo.load();
+  });
