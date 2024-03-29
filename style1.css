@@ -13,7 +13,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5; /* 设置视频的透明度 */
+    opacity: 0.65; /* 设置视频的透明度 */
     object-fit: cover;
   }
 

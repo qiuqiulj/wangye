@@ -91,7 +91,7 @@ let img = document.querySelector('.img')
 
     // 如果是安卓设备，加载另一个视频
     if (isAndroid()) {
-      videoSource.src = "video/alt2.mp4";
+      videoSource.src = "video/alt3.mp4";
     } else {
       videoSource.src = "video/星汐seki_水墨_AI生成.mp4";
     }
