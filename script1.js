@@ -116,7 +116,7 @@ let img = document.querySelector('.img')
             }
             // 继续播放下一帧
             // 计算每秒24帧的间隔时间（约为1000ms/24 ≈ 42ms）
-            setTimeout(step, 50);
+            setTimeout(step, 42);
         };
 
         // 开始播放
