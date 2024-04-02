@@ -83,6 +83,9 @@ let img = document.querySelector('.img')
   function isAndroid() {
     return /Android/i.test(navigator.userAgent);
   }
+  function isIos() {
+    return /iPhone|iPod/.test(navigator.userAgent);
+  }
 
   // 设置背景视频
   window.addEventListener('DOMContentLoaded', function() {
@@ -91,7 +94,33 @@ let img = document.querySelector('.img')
 
     // 如果是安卓设备，加载另一个视频
     if (isAndroid()) {
-      videoSource.src = "video/alt3.mp4";
+        var store = {}; // 存储预加载的图片对象
+        var index = 3000; // 图片序号起始值
+
+        // 预加载图片
+        for (var i = 3000; i <= 3148; i++) {
+            var img = new Image();
+            img.src = 'picture/more2/alt' + i + '.jpg'; // 图片路径
+            store[i] = img;
+        }
+
+        // 播放图片流程
+        var step = function () {
+            var img = store[index];
+            document.body.style.backgroundImage = 'url(' + img.src + ')'; // 设置背景图片
+            // 序号自增
+            index++;
+            // 如果序号超过最大值，重置为起始值，实现循环播放
+            if (index > 3148) {
+                index = 3000;
+            }
+            // 继续播放下一帧
+            // 计算每秒24帧的间隔时间（约为1000ms/24 ≈ 42ms）
+            setTimeout(step, 50);
+        };
+
+        // 开始播放
+        step();
     } else {
       videoSource.src = "video/星汐seki_水墨_AI生成.mp4";
     }

@@ -26,6 +26,7 @@
     background-color: rgba(0, 0, 0, 0.5); /* 设置内容区域的透明度 */
   }
 
+  
   /*第二次添加  如果跟之前重复了怎么办  会覆盖*/
   body {
     display: flex;
@@ -33,6 +34,9 @@
     align-items: center; /* 垂直居中 */
     min-height: 100vh; /* 设置最小高度为视口高度，确保内容垂直居中 */
     margin: 0;
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
   }
   
   
@@ -88,6 +92,7 @@
     border: none;
     cursor: pointer;
     font-weight: bold;
+    font-size: 15px;
   }
   
   /* 鼠标悬停在按钮上时改变按钮样式 */
